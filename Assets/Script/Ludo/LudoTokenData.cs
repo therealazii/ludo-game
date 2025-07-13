@@ -9,7 +9,8 @@ public class LudoTokenData : MonoBehaviour
     public int value;
 
     public void Select() {
-        ludo.selectedValue = value;
-        gameObject.GetComponent<Button>().interactable = false;
+        if (ludo.diceValues.IndexOf(value) >= 0) {
+            ludo.selectedValue = value;
+        } 
     }
 }
